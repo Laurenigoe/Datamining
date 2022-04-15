@@ -1,0 +1,8 @@
+def decision_tree(x,y,i):
+  classifier = DecisionTreeClassifier(random_state=i) 
+  classifier.fit(X_train, y_train)
+  predictions = classifier.predict(X_test)
+  acc = sum(predictions==y_test)/y_test.shape[0]
+  return acc
+DecisionTree13 = decision_tree(X_train, y_train,13)
+print("Accuracy when the hyperparameter is 13 for the descision tree : ",DecisionTree13)
